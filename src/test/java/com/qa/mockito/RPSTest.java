@@ -10,7 +10,7 @@ public class RPSTest {
 
 	@Test
 	public void testRockVsPaper() {
-		assertEquals("LOSE", this.rps.play("ROCK"));
+		assertEquals("LOSE", this.rps.play());
 	}
 
 }

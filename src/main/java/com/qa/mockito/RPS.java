@@ -6,12 +6,22 @@ public class RPS {
 
 	private static final String[] choices = { "ROCK", "PAPER", "SCISSORS" };
 
-	private Random rand = new Random();
+	private Random rand;
 
-	public String play(String choice) {
+	private UserInput input;
+
+	public RPS() {
+		super();
+		this.rand = new Random();
+		this.input = new UserInput();
+	}
+
+	public String play() {
+		System.out.println("Choose ROCK, PAPER or SCISSORS:");
+		String playerChoice = this.input.getText();
 		String cpuChoice = choices[rand.nextInt(3) - 1];
 
-		switch (choice.toUpperCase()) {
+		switch (playerChoice.toUpperCase()) {
 		case ("ROCK"):
 			if (cpuChoice.equals("ROCK"))
 				return "DRAW";
